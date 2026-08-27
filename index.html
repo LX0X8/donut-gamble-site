@@ -4,419 +4,261 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>DonutMax — DonutSMP Games</title>
-    <meta name="description" content="DonutMax — games and entertainment for DonutSMP players.">
+    <title>DonutMax</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <div class="background-glow glow-one"></div>
-    <div class="background-glow glow-two"></div>
+<header>
+    <a class="logo" href="#">
+        🍩 DONUT<span>MAX</span>
+    </a>
 
-    <!-- NAVBAR -->
-    <header class="navbar">
+    <nav>
+        <a href="#games">Games</a>
+        <a href="#activity">Activity</a>
+        <a href="#how">How It Works</a>
+    </nav>
 
-        <a href="#" class="brand">
-            <span class="brand-icon">🍩</span>
-            <span>DONUT<span>MAX</span></span>
-        </a>
+    <div class="online">
+        <i></i>
+        DEMO ONLINE
+    </div>
+</header>
 
-        <nav>
-            <a href="#games">Games</a>
-            <a href="#activity">Activity</a>
-            <a href="#how">How It Works</a>
-        </nav>
 
-        <div class="nav-right">
-            <div class="status">
-                <span class="status-dot"></span>
-                <span id="botStatus">Checking...</span>
-            </div>
+<main>
 
-            <button class="connect-btn" onclick="connectMinecraft()">
-                Connect
-            </button>
+<section class="hero">
+
+    <div class="hero-left">
+
+        <div class="eyebrow">
+            DONUTMAX • DEMO MODE
         </div>
 
-    </header>
-
-
-    <!-- HERO -->
-    <main>
-
-        <section class="hero">
-
-            <div class="hero-content">
-
-                <div class="eyebrow">
-                    <span class="live-dot"></span>
-                    DONUTSMP GAMING
-                </div>
-
-                <h1>
-                    TEST YOUR
-                    <span>LUCK.</span>
-                </h1>
-
-                <p>
-                    Coinflip, Jackpot and more.
-                    Choose your game and see what happens.
-                </p>
-
-                <div class="hero-buttons">
-                    <a href="#games" class="primary-btn">
-                        🎰 Play Games
-                    </a>
-
-                    <a href="#how" class="secondary-btn">
-                        How it works
-                    </a>
-                </div>
-
-                <div class="hero-stats">
-
-                    <div>
-                        <strong id="onlinePlayers">—</strong>
-                        <small>Players Online</small>
-                    </div>
-
-                    <div>
-                        <strong id="totalGames">0</strong>
-                        <small>Games Played</small>
-                    </div>
-
-                    <div>
-                        <strong id="jackpotValue">$0</strong>
-                        <small>Current Jackpot</small>
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="hero-card">
-
-                <div class="hero-card-header">
-                    <span>LIVE</span>
-                    <span class="pulse"></span>
-                </div>
-
-                <div class="coin">
-                    🍩
-                </div>
-
-                <h3>DONUTMAX</h3>
-
-                <p>Good luck.</p>
-
-                <div class="fake-result">
-                    <span>Recent Result</span>
-                    <strong>🟢 WIN</strong>
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- GAMES -->
-        <section class="section" id="games">
-
-            <div class="section-heading">
-                <div>
-                    <span class="section-label">CHOOSE YOUR GAME</span>
-                    <h2>Games</h2>
-                </div>
-
-                <span class="game-count">3 GAMES</span>
-            </div>
-
-
-            <div class="games-grid">
-
-                <!-- COINFLIP -->
-                <article class="game-card">
-
-                    <div class="game-card-top">
-                        <div class="game-icon coinflip-icon">
-                            🪙
-                        </div>
-
-                        <span class="badge green">
-                            2×
-                        </span>
-                    </div>
-
-                    <h3>Coinflip</h3>
-
-                    <p>
-                        Pick heads or tails. Win and receive
-                        a 2× payout.
-                    </p>
-
-                    <div class="game-info">
-                        <span>Risk</span>
-                        <strong>Medium</strong>
-                    </div>
-
-                    <button onclick="openGame('Coinflip')" class="game-btn">
-                        Play Coinflip
-                        <span>→</span>
-                    </button>
-
-                </article>
-
-
-                <!-- JACKPOT -->
-                <article class="game-card featured">
-
-                    <div class="featured-label">
-                        POPULAR
-                    </div>
-
-                    <div class="game-card-top">
-                        <div class="game-icon jackpot-icon">
-                            🎰
-                        </div>
-
-                        <span class="badge orange">
-                            LIVE
-                        </span>
-                    </div>
-
-                    <h3>Jackpot</h3>
-
-                    <p>
-                        Enter the pot and compete for the
-                        entire jackpot.
-                    </p>
-
-                    <div class="game-info">
-                        <span>Jackpot</span>
-                        <strong id="cardJackpot">$0</strong>
-                    </div>
-
-                    <button onclick="openGame('Jackpot')" class="game-btn orange-btn">
-                        Enter Jackpot
-                        <span>→</span>
-                    </button>
-
-                </article>
-
-
-                <!-- ROULETTE -->
-                <article class="game-card">
-
-                    <div class="game-card-top">
-                        <div class="game-icon roulette-icon">
-                            🎯
-                        </div>
-
-                        <span class="badge red">
-                            HIGH RISK
-                        </span>
-                    </div>
-
-                    <h3>Roulette</h3>
-
-                    <p>
-                        Take a chance and risk your wager
-                        for a larger reward.
-                    </p>
-
-                    <div class="game-info">
-                        <span>Risk</span>
-                        <strong>High</strong>
-                    </div>
-
-                    <button onclick="openGame('Roulette')" class="game-btn">
-                        Play Roulette
-                        <span>→</span>
-                    </button>
-
-                </article>
-
-            </div>
-
-        </section>
-
-
-        <!-- ACTIVITY -->
-        <section class="section activity-section" id="activity">
-
-            <div class="section-heading">
-
-                <div>
-                    <span class="section-label">LIVE FEED</span>
-                    <h2>Recent Activity</h2>
-                </div>
-
-                <span class="live-label">
-                    <span class="live-dot"></span>
-                    LIVE
-                </span>
-
-            </div>
-
-
-            <div class="activity-panel">
-
-                <div id="activityList">
-
-                    <div class="empty-activity">
-                        <span>🎰</span>
-                        <p>No games yet</p>
-                        <small>Recent games will appear here.</small>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- HOW IT WORKS -->
-        <section class="section how-section" id="how">
-
-            <div class="section-heading">
-                <div>
-                    <span class="section-label">GET STARTED</span>
-                    <h2>How It Works</h2>
-                </div>
-            </div>
-
-
-            <div class="steps">
-
-                <div class="step">
-
-                    <div class="step-number">
-                        01
-                    </div>
-
-                    <div>
-                        <h3>Join DonutSMP</h3>
-
-                        <p>
-                            Join the Minecraft server and
-                            make sure you have your in-game
-                            currency ready.
-                        </p>
-                    </div>
-
-                </div>
-
-
-                <div class="step">
-
-                    <div class="step-number">
-                        02
-                    </div>
-
-                    <div>
-                        <h3>Choose a game</h3>
-
-                        <p>
-                            Select Coinflip, Jackpot or
-                            another available game.
-                        </p>
-                    </div>
-
-                </div>
-
-
-                <div class="step">
-
-                    <div class="step-number">
-                        03
-                    </div>
-
-                    <div>
-                        <h3>Play</h3>
-
-                        <p>
-                            Follow the instructions shown
-                            on the website and in Minecraft.
-                        </p>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- FOOTER -->
-    <footer>
-
-        <div class="footer-brand">
-            🍩 <strong>DONUTMAX</strong>
-        </div>
+        <h1>
+            PLAY YOUR<br>
+            <span>LUCK.</span>
+        </h1>
 
         <p>
-            DonutMax is an independent project and is not
-            affiliated with DonutSMP or its owners.
+            Coinflip, Jackpot and Roulette using
+            demo credits.
         </p>
 
-        <div class="footer-links">
-            <a href="#games">Games</a>
-            <a href="#how">How It Works</a>
-            <a href="#activity">Activity</a>
-        </div>
+        <a class="primary-button" href="#games">
+            PLAY NOW →
+        </a>
 
-        <div class="copyright">
-            © 2026 DonutMax
-        </div>
+        <div class="stats">
 
-    </footer>
-
-
-    <!-- GAME MODAL -->
-    <div class="modal-overlay" id="gameModal">
-
-        <div class="modal">
-
-            <button class="close-modal" onclick="closeGame()">
-                ×
-            </button>
-
-            <div class="modal-icon" id="modalIcon">
-                🎰
+            <div>
+                <strong id="balance">$10,000</strong>
+                <small>BALANCE</small>
             </div>
 
-            <span class="section-label">
-                GAME
-            </span>
-
-            <h2 id="modalTitle">
-                Game
-            </h2>
-
-            <p id="modalDescription">
-                This game will be connected to the backend.
-            </p>
-
-            <div class="coming-soon">
-                <span>⚡</span>
-                Backend connection coming soon
+            <div>
+                <strong id="games">0</strong>
+                <small>GAMES</small>
             </div>
 
-            <button class="primary-btn modal-btn" onclick="closeGame()">
-                Got it
-            </button>
+            <div>
+                <strong id="jackpot">$0</strong>
+                <small>JACKPOT</small>
+            </div>
 
         </div>
 
     </div>
 
 
-    <script src="app.js"></script>
+    <div class="hero-card">
+
+        <div class="donut">
+            🍩
+        </div>
+
+        <h2>DONUTMAX</h2>
+
+        <p>
+            Demo Gaming Hub
+        </p>
+
+        <div class="status">
+            ● ONLINE
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="games" class="section">
+
+    <div class="section-title">
+        <small>CHOOSE YOUR GAME</small>
+        <h2>Games</h2>
+    </div>
+
+
+    <div class="game-grid">
+
+        <article class="game-card">
+
+            <div class="game-icon">
+                🪙
+            </div>
+
+            <h3>Coinflip</h3>
+
+            <p>
+                Pick your luck and win 2× your wager.
+            </p>
+
+            <input
+                id="coinAmount"
+                type="number"
+                min="1"
+                placeholder="Wager"
+            >
+
+            <button onclick="coinflip()">
+                PLAY COINFLIP
+            </button>
+
+        </article>
+
+
+        <article class="game-card featured">
+
+            <div class="game-icon">
+                🎰
+            </div>
+
+            <h3>Jackpot</h3>
+
+            <p>
+                Enter the demo jackpot and compete
+                for the entire pot.
+            </p>
+
+            <input
+                id="jackAmount"
+                type="number"
+                min="1"
+                placeholder="Entry"
+            >
+
+            <button onclick="joinJackpot()">
+                JOIN JACKPOT
+            </button>
+
+        </article>
+
+
+        <article class="game-card">
+
+            <div class="game-icon">
+                🎯
+            </div>
+
+            <h3>Roulette</h3>
+
+            <p>
+                Choose a side and test your luck.
+            </p>
+
+            <input
+                id="rouletteAmount"
+                type="number"
+                min="1"
+                placeholder="Wager"
+            >
+
+            <button onclick="roulette()">
+                PLAY ROULETTE
+            </button>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<section id="activity" class="section">
+
+    <div class="section-title">
+        <small>LIVE FEED</small>
+        <h2>Recent Activity</h2>
+    </div>
+
+    <div id="activityList" class="activity-list">
+
+        <div class="empty">
+            No games yet.
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="how" class="section">
+
+    <div class="section-title">
+        <small>GET STARTED</small>
+        <h2>How It Works</h2>
+    </div>
+
+    <div class="steps">
+
+        <div>
+            <strong>01</strong>
+            <h3>Get Credits</h3>
+            <p>
+                Start with $10,000 demo credits.
+            </p>
+        </div>
+
+        <div>
+            <strong>02</strong>
+            <h3>Choose a Game</h3>
+            <p>
+                Enter a wager and select a game.
+            </p>
+        </div>
+
+        <div>
+            <strong>03</strong>
+            <h3>Get Your Result</h3>
+            <p>
+                Your demo balance updates immediately.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<div id="toast"></div>
+
+
+<footer>
+    <b>🍩 DONUTMAX</b>
+    <span>
+        Demo project • Not affiliated with DonutSMP
+    </span>
+</footer>
+
+
+<script src="app.js"></script>
 
 </body>
 </html>
