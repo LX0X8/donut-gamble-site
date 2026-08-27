@@ -1,12 +1,4 @@
-// DonutMax frontend
-// This page is intentionally informational.
-// No real currency or Minecraft transactions
-// are handled by the website.
-
-console.log("DonutMax loaded.");
-
-
-// Smooth navigation
+// DonutMax website
 
 document
     .querySelectorAll('a[href^="#"]')
@@ -30,3 +22,5 @@ document
         });
 
     });
+
+console.log("DonutMax loaded.");
